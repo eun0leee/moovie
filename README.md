@@ -1,4 +1,6 @@
-# OMDb API를 활용한 영화 검색 사이트
+# 🎞️영화 검색 사이트🎞️
+OMDb API를 활용한 영화 검색 사이트를 제작해보았습니다.
+Fastcampus 과제 중 하나를 수행한 것으로 과제의 요구사항을 달성하려고 노력했습니다.
 
 [배포 사이트](https://tourmaline-rabanadas-0bdb58.netlify.app)
 
@@ -6,11 +8,7 @@
 
 <img alt="Html" src ="https://img.shields.io/badge/HTML-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/> <img alt="CSS3" src ="https://img.shields.io/badge/CSS3-FF9933.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/> <img alt="JavaScript" src ="https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=white"/>  
 
-## 요구사항
-
-필수 요구사항은 꼭 달성해야 하는 목표로, 수정/삭제는 불가하고 추가는 가능합니다.    
-선택 요구사항은 단순 예시로, 자유롭게 추가/수정/삭제해서 구현해보세요.  
-각 요구사항은 달성 후 마크다운에서 `- [x]`로 표시하세요.  
+## 👉 요구사항
 
 ### :exclamation: 필수
 
