@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/reset-css.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+    <script defer src="./main.js"></script>
+  </head>
+
+  <body>
+    <section class="home">
+      <!----------navigation---------->
+      <nav class="home-nav" role="navigation">
+        <h1 class="home-nav-logo">
+          <a href="">OBDb API</a>
+        </h1>
+        <ul class="home-nav-menu">
+          <h2 class="sr-only">MENU</h2>
+          <li><a href="#search">Search</a></li>
+          <li><a href="#home">Movie</a></li>
+        </ul>
+      </nav>
+
+
+      <main class="home-main">
+        <!----------search bar---------->
+        <form action="" method="get">
+          <input class="search-input" type="text" placeholder="Search for the movie title">
+          <div class="options">
+            <select class="page">
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+            </select>
+            <button class="search-btn" type="submit">Search</button>
+          </div>
+        </form>
+
+        <!----------movie list---------->
+        <div class="movies">
+          <!-- Movie items -->
+        </div>
+        <div class="actions">
+          <button class="btn" type="button">More..</button>
+        </div>
+      </main>
+    </section>
+  </body>
+</html>
