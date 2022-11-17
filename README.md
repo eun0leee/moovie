@@ -1,8 +1,9 @@
 # 🎞️영화 검색 사이트🎞️
-OMDb API를 활용한 영화 검색 사이트를 제작해보았습니다.
-Fastcampus 과제 중 하나를 수행한 것으로 과제의 요구사항을 달성하려고 노력했습니다.
+* OMDb API를 활용한 영화 검색 사이트를 제작해보았습니다.
+* Fastcampus 과제 중 하나를 수행한 것으로 과제의 요구사항을 달성하려고 노력했습니다.
 
-[배포 사이트](https://tourmaline-rabanadas-0bdb58.netlify.app)
+## 👉 Site
+* [배포 사이트](https://tourmaline-rabanadas-0bdb58.netlify.app)
 
 ## 👉 Stack
 
