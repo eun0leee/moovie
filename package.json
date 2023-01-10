@@ -1,0 +1,40 @@
+{
+  "name": "search-movie",
+  "version": "1.0.0",
+  "description": "* OMDb API를 활용한 영화 검색 사이트를 제작해보았습니다.\r * Fastcampus 과제 중 하나를 수행한 것으로 과제의 요구사항을 달성하려고 노력했습니다.",
+  "main": "main.js",
+  "scripts": {
+    "dev": "parcel index.html --open",
+    "build": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eun0leee/search-movie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eun0leee/search-movie/issues"
+  },
+  "homepage": "https://github.com/eun0leee/search-movie#readme",
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-transform-runtime": "^7.19.6",
+    "@babel/preset-env": "^7.20.2",
+    "autoprefixer": "^9.8.8",
+    "copy": "^0.3.2",
+    "files": "^2.2.1",
+    "parcel": "^2.8.2",
+    "plugin": "^0.3.3",
+    "postcss": "^8.4.21",
+    "static": "^2.0.0"
+  },
+  "staticFiles": {
+    "staticPath": "static"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
