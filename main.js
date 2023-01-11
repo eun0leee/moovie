@@ -5,6 +5,7 @@ const searchBtnEl = document.querySelector('.search-btn');
 const selectCountEl = document.querySelector('.select-count');
 const moviesEl = document.querySelector('.movies');
 let page = 1;
+const moreBtnEl = document.querySelector('.more-btn');
 
 //////////////// 로딩 애니메이션 ////////////////
 const loading = document.querySelector('.loading');
@@ -16,6 +17,14 @@ function showLoading() {
 function hideLoading() {
   loading.style.display = 'none';
 }
+
+//////////////// 더보기 버튼 ////////////////
+function handleMoreBtn() {
+  page += 1;
+  getMovies(searchInputEl.value, page);
+}
+
+moreBtnEl.addEventListener('click', handleMoreBtn);
 
 //////////////// 렌더링 ////////////////
 function renderMovies(movies) {
@@ -30,8 +39,9 @@ function renderMovies(movies) {
       const yearEl = document.createElement('span');
       yearEl.textContent = movie.Year;
 
+      moreBtnEl.style.display = 'block';
       movieLiEl.append(posterEl, titleEl, yearEl);
-      moviesEl.prepend(movieLiEl);
+      moviesEl.append(movieLiEl);
     } else {
       console.log('해당하는 영화 목록이 없습니다.');
     }
@@ -77,15 +87,5 @@ function handleSubmit(e) {
 
 searchBtnEl.addEventListener('click', handleSubmit);
 // searchInputEl.addEventListener('keyup', handleInput);
-
-//////////////// 더보기 버튼 클릭 ////////////////
-const moreBtnEl = document.querySelector('.more-btn');
-
-function handleMoreBtn() {
-  page += 1;
-  getMovies(searchInputEl.value, page);
-}
-
-moreBtnEl.addEventListener('click', handleMoreBtn);
 
 //////////////// filter  ////////////////
