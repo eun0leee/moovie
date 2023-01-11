@@ -92,12 +92,12 @@ main {
     }
 
     .filter {
-      .count {
+      .select-count {
         margin-right: 5px;
         cursor: pointer;
       }
 
-      .count,
+      .select-count,
       button {
         height: 80px;
         padding: 0 25px;

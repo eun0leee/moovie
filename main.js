@@ -1,8 +1,8 @@
 const formEl = document.querySelector('form');
 const searchInputEl = document.querySelector('.search-input');
 const searchBtnEl = document.querySelector('.search-btn');
+const selectCountEl = document.querySelector('.select-count');
 const moviesEl = document.querySelector('.movies');
-const selectCountEl = document.querySelector('.count');
 let page = 1;
 
 //////////////// 렌더링 ////////////////
@@ -31,6 +31,7 @@ async function getMovies(title, page) {
   try {
     const res = await fetch(`https://omdbapi.com/?apikey=7035c60c&s=${title}&page=${page}`);
     const json = await res.json();
+    console.log(json);
     renderMovies(json.Search);
   } catch (error) {
     console.log(error);
@@ -67,7 +68,6 @@ searchBtnEl.addEventListener('click', handleSubmit);
 const moreBtnEl = document.querySelector('.more-btn');
 
 function handleMoreBtn() {
-  console.log(page);
   page += 1;
   getMovies(searchInputEl.value, page);
 }
