@@ -1,60 +1,77 @@
-;(async () => {
-  // 초기화 코드
-  const inputEl = document.querySelector(".search-input");
-  const selectPageEl = document.querySelector(".page");
-  const searchBtnEl = document.querySelector(".search-btn");
-  const moviesEl = document.querySelector(".movies");
-  const moreBtnEl = document.querySelector(".btn");
-  let title;
-  let page;
-  
-  // search 버튼 클릭
-  searchBtnEl.addEventListener("click", async (e) => {
-    e.preventDefault();
+const formEl = document.querySelector('form');
+const searchInputEl = document.querySelector('.search-input');
+const searchBtnEl = document.querySelector('.search-btn');
+const moviesEl = document.querySelector('.movies');
+const selectCountEl = document.querySelector('.count');
+let page = 1;
 
-    if (moviesEl.innerHTML !== "") {
-      moviesEl.innerHTML = "";
-    }
+//////////////// 렌더링 ////////////////
+function renderMovies(movies) {
+  movies.map((movie) => {
+    if (movie) {
+      const movieLiEl = document.createElement('li');
+      const posterEl = document.createElement('img');
+      posterEl.src = movie.Poster;
+      posterEl.alt = `${movie.Title}의 포스터`;
+      const titleEl = document.createElement('h3');
+      titleEl.textContent = movie.Title;
+      const yearEl = document.createElement('span');
+      yearEl.textContent = movie.Year;
 
-    title = inputEl.value;
-    const pagenum = selectPageEl.value; // select option 설정
-    for(let i = 1; i <= pagenum; i ++) {
-      page = i;
-      const movie = await getMovies(title, page);
-      renderMovies(movie);
+      movieLiEl.append(posterEl, titleEl, yearEl);
+      moviesEl.append(movieLiEl);
+    } else {
+      console.log('해당하는 영화 목록이 없습니다.');
     }
   });
+}
 
-  // 더보기 버튼 클릭
-  moreBtnEl.addEventListener("click", async () => {
-    title = inputEl.value;
-    page += 1;
-    const movies = await getMovies(title, page);
-    renderMovies(movies);
-  });
-
-  // 영화 api 가져오기
-  async function getMovies(title, page = 1) {
+//////////////// OMDB API, get ////////////////
+async function getMovies(title, page) {
+  try {
     const res = await fetch(`https://omdbapi.com/?apikey=7035c60c&s=${title}&page=${page}`);
-    const { Search: movies } = await res.json();
-    return movies;
+    const json = await res.json();
+    renderMovies(json.Search);
+  } catch (error) {
+    console.log(error);
   }
+}
 
-  // 렌더링
-  function renderMovies(movies) {
-    for (const movie of movies) {
-      const el = document.createElement("div");
-      el.classList.add("movie");
-      
-      const h3El = document.createElement("h3");
-      h3El.textContent = movie.Title;
+//////////////// 영화 제목으로 검색 ////////////////
 
-      const imgEl = document.createElement("img");
-      imgEl.src = movie.Poster;
+// input
+function handleInput() {
+  moviesEl.innerHTML !== '' ? (moviesEl.innerHTML = '') : '';
 
-      el.append(h3El, imgEl);
-
-      moviesEl.append(el);
+  if (searchInputEl.value.length > 2) {
+    searchInputEl.classList.remove('search-input-invalid');
+    for (let i = 1; i <= selectCountEl.value; i++) {
+      page = i;
+      getMovies(searchInputEl.value, page);
     }
+  } else {
+    searchInputEl.classList.add('search-input-invalid');
   }
-})();
+}
+
+// submit
+function handleSubmit(e) {
+  e.preventDefault();
+  handleInput();
+}
+
+searchBtnEl.addEventListener('click', handleSubmit);
+// searchInputEl.addEventListener('keyup', handleInput);
+
+//////////////// 더보기 버튼 클릭 ////////////////
+const moreBtnEl = document.querySelector('.more-btn');
+
+function handleMoreBtn() {
+  console.log(page);
+  page += 1;
+  getMovies(searchInputEl.value, page);
+}
+
+moreBtnEl.addEventListener('click', handleMoreBtn);
+
+//////////////// filter  ////////////////

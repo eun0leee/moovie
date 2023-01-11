@@ -32,10 +32,10 @@
 
       <main>
         <!----------search bar---------->
-        <form action="" method="get">
-          <input class="search-input" type="text" placeholder="Search for the movie title" minlength="3" />
+        <form action="" method="post">
+          <input class="search-input" type="text" placeholder="Search for the movie title" minlength="3" required />
           <div class="filter">
-            <select class="page" name="page">
+            <select class="count" name="count">
               <option value="1" selected="selected">10</option>
               <option value="2">20</option>
               <option value="3">30</option>
@@ -45,11 +45,11 @@
         </form>
 
         <!----------movie list---------->
-        <div class="movies">
+        <ul class="movies">
           <!-- Movie items -->
-        </div>
+        </ul>
         <div class="actions">
-          <button class="btn" type="button">More..</button>
+          <button class="more-btn" type="button">More..</button>
         </div>
       </main>
     </div>

@@ -72,6 +72,7 @@ main {
     gap: 40px;
 
     .search-input {
+      position: relative;
       width: 60vw;
       height: 80px;
       padding-left: 20px;
@@ -86,13 +87,17 @@ main {
       }
     }
 
+    .search-input-invalid {
+      border-color: rgba(220, 83, 83, 0.626);
+    }
+
     .filter {
-      select {
+      .count {
         margin-right: 5px;
         cursor: pointer;
       }
 
-      select,
+      .count,
       button {
         height: 80px;
         padding: 0 25px;
@@ -167,7 +172,7 @@ main {
     justify-content: center;
     padding-bottom: 50px;
 
-    .btn {
+    .more-btn {
       display: block;
       width: 80px;
       height: 50px;
