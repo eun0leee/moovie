@@ -34,13 +34,16 @@ function renderMovies(movies) {
       const posterEl = document.createElement('img');
       posterEl.src = movie.Poster;
       posterEl.alt = `${movie.Title}의 포스터`;
+      const infoEl = document.createElement('div');
+      infoEl.classList.add('infoEl');
       const titleEl = document.createElement('h3');
       titleEl.textContent = movie.Title;
       const yearEl = document.createElement('span');
       yearEl.textContent = movie.Year;
 
       moreBtnEl.style.display = 'block';
-      movieLiEl.append(posterEl, titleEl, yearEl);
+      infoEl.append(titleEl, yearEl);
+      movieLiEl.append(posterEl, infoEl);
       moviesEl.append(movieLiEl);
     } else {
       console.log('해당하는 영화 목록이 없습니다.');

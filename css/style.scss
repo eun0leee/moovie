@@ -144,12 +144,12 @@ main {
     justify-content: center;
     gap: 30px;
 
-    width: 80vw;
+    width: 90vw;
     height: auto;
     margin: 0 auto;
-    padding: 50px;
+    padding: 50px 0;
 
-    .movie {
+    li {
       position: relative;
 
       width: 200px;
@@ -159,31 +159,33 @@ main {
       overflow: hidden;
 
       transition: all 300ms ease-in-out;
+      background-color: #000;
 
       &:hover {
-        scale: 1.1;
+        scale: 1.05;
       }
 
-      h3 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      img {
+        width: 100%;
+      }
+
+      .infoEl {
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
 
-        padding: 20px 10px;
+        padding: 10px 10px;
         background-color: rgba(0, 0, 0, 0.7);
 
         text-align: center;
         font-weight: 700;
         line-height: 1.2;
         color: white;
-      }
 
-      img {
-        width: 100%;
+        h3 {
+          margin-bottom: 10px;
+        }
       }
     }
   }
