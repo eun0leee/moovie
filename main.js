@@ -1,9 +1,21 @@
+const mainEl = document.querySelector('main');
 const formEl = document.querySelector('form');
 const searchInputEl = document.querySelector('.search-input');
 const searchBtnEl = document.querySelector('.search-btn');
 const selectCountEl = document.querySelector('.select-count');
 const moviesEl = document.querySelector('.movies');
 let page = 1;
+
+//////////////// 로딩 애니메이션 ////////////////
+const loading = document.querySelector('.loading');
+hideLoading();
+
+function showLoading() {
+  loading.style.display = 'block';
+}
+function hideLoading() {
+  loading.style.display = 'none';
+}
 
 //////////////// 렌더링 ////////////////
 function renderMovies(movies) {
@@ -19,7 +31,7 @@ function renderMovies(movies) {
       yearEl.textContent = movie.Year;
 
       movieLiEl.append(posterEl, titleEl, yearEl);
-      moviesEl.append(movieLiEl);
+      moviesEl.prepend(movieLiEl);
     } else {
       console.log('해당하는 영화 목록이 없습니다.');
     }
@@ -28,10 +40,12 @@ function renderMovies(movies) {
 
 //////////////// OMDB API, get ////////////////
 async function getMovies(title, page) {
+  showLoading();
   try {
     const res = await fetch(`https://omdbapi.com/?apikey=7035c60c&s=${title}&page=${page}`);
     const json = await res.json();
     console.log(json);
+    hideLoading();
     renderMovies(json.Search);
   } catch (error) {
     console.log(error);
