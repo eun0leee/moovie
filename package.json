@@ -24,12 +24,8 @@
     "@babel/preset-env": "^7.20.2",
     "@parcel/transformer-sass": "^2.8.2",
     "autoprefixer": "^9.8.8",
-    "copy": "^0.3.2",
-    "files": "^2.2.1",
-    "parcel": "^2.8.2",
-    "plugin": "^0.3.3",
-    "postcss": "^8.4.21",
-    "static": "^2.0.0"
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "postcss": "^8.4.21"
   },
   "staticFiles": {
     "staticPath": "static"
