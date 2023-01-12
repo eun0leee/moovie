@@ -1,8 +1,4 @@
-const mainEl = document.querySelector('main');
-const formEl = document.querySelector('form');
 const searchInputEl = document.querySelector('.search-input');
-const searchBtnEl = document.querySelector('.search-btn');
-const selectCountEl = document.querySelector('.select-count');
 const moviesEl = document.querySelector('.movies');
 let page = 1;
 const moreBtnEl = document.querySelector('.more-btn');
@@ -52,10 +48,10 @@ function renderMovies(movies) {
 }
 
 //////////////// OMDB API, get ////////////////
-async function getMovies(title, page) {
+async function getMovies(title, page, year) {
   showLoading();
   try {
-    const res = await fetch(`https://omdbapi.com/?apikey=7035c60c&s=${title}&page=${page}`);
+    const res = await fetch(`https://omdbapi.com/?apikey=7035c60c&s=${title}&page=${page}&y=${year}`);
     const json = await res.json();
     console.log(json);
     hideLoading();
@@ -69,6 +65,18 @@ async function getMovies(title, page) {
 
 // input
 function handleInput() {
+  //select
+  const selectCountEl = document.querySelector('.select-count');
+  const selectYearEl = document.querySelector('.select-year');
+
+  const currentYear = new Date().getFullYear();
+  for (let i = currentYear; i >= 1985; i--) {
+    const optionYearEl = document.createElement('option');
+    optionYearEl.innerText = i;
+    optionYearEl.value = i;
+    selectYearEl.append(optionYearEl);
+  }
+
   moviesEl.innerHTML !== '' ? (moviesEl.innerHTML = '') : '';
 
   if (searchInputEl.value.length > 2) {
@@ -83,6 +91,7 @@ function handleInput() {
 }
 
 // submit
+const searchBtnEl = document.querySelector('.search-btn');
 function handleSubmit(e) {
   e.preventDefault();
   handleInput();
@@ -90,5 +99,3 @@ function handleSubmit(e) {
 
 searchBtnEl.addEventListener('click', handleSubmit);
 // searchInputEl.addEventListener('keyup', handleInput);
-
-//////////////// filter  ////////////////
