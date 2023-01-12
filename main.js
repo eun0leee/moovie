@@ -14,6 +14,17 @@ function hideLoading() {
   loading.style.display = 'none';
 }
 
+//////////////// 개봉년도 select ////////////////
+const selectYearEl = document.querySelector('.select-year');
+
+const currentYear = new Date().getFullYear();
+for (let i = currentYear; i >= 1985; i--) {
+  const optionYearEl = document.createElement('option');
+  optionYearEl.innerText = i;
+  optionYearEl.value = i;
+  selectYearEl.append(optionYearEl);
+}
+
 //////////////// 더보기 버튼 ////////////////
 function handleMoreBtn() {
   page += 1;
@@ -67,15 +78,6 @@ async function getMovies(title, page, year) {
 function handleInput() {
   //select
   const selectCountEl = document.querySelector('.select-count');
-  const selectYearEl = document.querySelector('.select-year');
-
-  const currentYear = new Date().getFullYear();
-  for (let i = currentYear; i >= 1985; i--) {
-    const optionYearEl = document.createElement('option');
-    optionYearEl.innerText = i;
-    optionYearEl.value = i;
-    selectYearEl.append(optionYearEl);
-  }
 
   moviesEl.innerHTML !== '' ? (moviesEl.innerHTML = '') : '';
 
@@ -83,7 +85,7 @@ function handleInput() {
     searchInputEl.classList.remove('search-input-invalid');
     for (let i = 1; i <= selectCountEl.value; i++) {
       page = i;
-      getMovies(searchInputEl.value, page);
+      getMovies(searchInputEl.value, page, selectYearEl.value);
     }
   } else {
     searchInputEl.classList.add('search-input-invalid');
