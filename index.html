@@ -36,7 +36,14 @@
       <main>
         <!----------search bar---------->
         <form action="" method="post">
-          <input class="search-input" type="text" placeholder="Search for the movie title" minlength="3" required />
+          <input
+            class="search-input"
+            type="text"
+            placeholder="Search for the movie title"
+            minlength="3"
+            maxlength="30"
+            required
+          />
           <div class="filter">
             <select class="select-count" name="count">
               <option value="1" selected="selected">10</option>
