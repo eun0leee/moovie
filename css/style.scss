@@ -1,28 +1,21 @@
-/********************* reset css ****************/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+/********************* Global ****************/
 button,
 input,
 textarea {
-  border: none;
-  background-color: transparent;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 16px;
-}
-
-select:focus,
-select:active,
-input:focus,
-input:active {
-  outline: none;
-  box-shadow: none;
 }
 
 body {
   background-color: #f9f2e8;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .home {
-  margin: 20px 60px;
+  width: 768px;
+  margin: 40px auto;
 }
 
 $main-color: #37a072;
@@ -31,31 +24,39 @@ $border: 3px solid $main-color;
 /********************* NAV *********************/
 nav {
   display: flex;
-  align-items: center;
-  height: 80px;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  width: 180px;
+
+  .logo,
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   .logo {
-    display: flex;
     gap: 10px;
-    margin-right: 40px;
     color: $main-color;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 25px;
 
-    &::after {
+    &::before {
       content: url('/assets/icon-logo.svg');
-      width: 1.3em;
+      width: 1em;
+      padding-top: 5px;
     }
   }
 
   .menu {
-    display: flex;
     gap: 30px;
     color: #797979;
-    font-size: 20px;
+    font-size: 18px;
 
     li:hover {
-      color: #000;
+      color: $main-color;
     }
   }
 }
@@ -63,57 +64,74 @@ nav {
 /********************* MAIN *********************/
 
 main {
-  margin-top: 80px;
+  margin: 0 auto;
 
   form {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 20px;
+    margin-bottom: 30px;
+    font-size: 20px;
 
     .search-input {
       position: relative;
-      width: 60vw;
-      height: 80px;
+      width: 300px;
+      height: 50px;
       padding-left: 20px;
       border: $border;
-      border-radius: 10px;
       color: #000;
-      font-size: 30px;
 
       &::placeholder {
-        font-size: 30px;
         color: rgb(199, 198, 198);
       }
-    }
-
-    .search-input-invalid {
-      border-color: rgba(220, 83, 83, 0.626);
     }
 
     .filter {
-      .select-count {
-        margin-right: 5px;
-        cursor: pointer;
-      }
-
       .select-count,
       .select-year,
       button {
-        height: 80px;
-        padding: 0 25px;
+        height: 50px;
+        padding: 0 10px;
         border: $border;
-        border-radius: 10px;
         background-color: #f9f2e8;
 
-        font-size: 25px;
-        color: rgb(199, 198, 198);
+        color: #c7c6c6;
       }
 
       button {
         background-color: $main-color;
         color: #fff;
-        cursor: pointer;
+
+        &:active {
+          border: 3px inset #fff;
+          box-shadow: 0px -2px 2px 0px rgba(49, 49, 49, 0.3);
+        }
+      }
+    }
+  }
+
+  .results {
+    width: 550px;
+    height: 350px;
+    margin: 0 auto;
+    padding: 10px;
+    border: $border;
+
+    &,
+    .beforeType {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .beforeType {
+      flex-direction: column;
+      color: #c7c6c6;
+
+      img {
+        width: 80px;
+        margin-bottom: 10px;
       }
     }
   }

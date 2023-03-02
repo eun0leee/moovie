@@ -159,12 +159,25 @@ button:focus,
 button:active,
 input:focus,
 input:active,
+select:focus,
+select:active,
 textarea:focus,
 textarea:active {
   outline: none;
   box-shadow: none;
 }
 
+button,
+select {
+  cursor: pointer;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  background-color: transparent;
+}
 .sr-only {
   position: absolute;
   overflow: hidden;

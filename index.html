@@ -7,16 +7,23 @@
 
     <!-- css -->
     <link rel="stylesheet" href="css/reset-css.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/css/style.scss" />
 
     <!-- js -->
     <script defer src="/main.js"></script>
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/icon-logo.png" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./assets/icon-logo.png"
+    />
 
-    <title>moveAll</title>
+    <title>Moovie</title>
   </head>
 
   <body>
@@ -24,7 +31,7 @@
       <!----------navigation---------->
       <nav role="navigation">
         <h1 class="logo">
-          <a href="">moveAll</a>
+          <a href="">Moovie</a>
         </h1>
         <ul class="menu">
           <h2 class="sr-only">MENU</h2>
@@ -32,7 +39,6 @@
           <li><a href="#home">Movie</a></li>
         </ul>
       </nav>
-
       <main>
         <!----------search bar---------->
         <form action="" method="post">
@@ -56,13 +62,15 @@
             <button class="search-btn" type="submit">Search</button>
           </div>
         </form>
-        <div class="loading"></div>
-        <!----------movie list---------->
-        <ul class="movies">
-          <!-- Movie items -->
-        </ul>
-        <div class="actions">
-          <button class="more-btn" type="button">More..</button>
+        <!----------results---------->
+        <div class="results">
+          <div class="beforeType">
+            <img
+              src="https://user-images.githubusercontent.com/90189513/222353175-2ee467f1-aedf-4148-a7df-42e8d17cc075.gif"
+              alt="waiting for your action"
+            />
+            <p>please type...!</p>
+          </div>
         </div>
       </main>
     </div>
