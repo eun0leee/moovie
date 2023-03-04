@@ -24,22 +24,26 @@ const moviesEl = document.createElement('ul');
 moviesEl.className = 'movies';
 
 function renderMovies(movies) {
-  movies.map((movie) => {
-    if (movie) {
-      beforeType.classList.add('hide');
-
+  beforeType.classList.add('hide');
+  if (movies.Response === 'True') {
+    movies.Search.map((movie) => {
       const movieLiEl = document.createElement('li');
       movieLiEl.className = 'movie';
       movieLiEl.innerHTML = `
-      <img src='${movie.Poster}' alt='${movie.Title}의 포스터'/>
-      `;
+        <img src='${movie.Poster}' alt='${movie.Title}의 포스터'/>
+        `;
 
       moviesEl.append(movieLiEl);
       resultsEl.append(moviesEl);
-    } else {
-      console.log('해당하는 영화 목록이 없습니다.');
-    }
-  });
+    });
+  } else if (movies.Response === 'False') {
+    resultsEl.innerHTML = '';
+    const noResults = document.createElement('p');
+    noResults.className = 'noResults';
+    noResults.innerText =
+      'No search results found.TT \n Try searching with another keyword.';
+    resultsEl.append(noResults);
+  }
 }
 
 // 검색
@@ -53,7 +57,8 @@ const handleSubmit = async (e) => {
       page,
       selectYearEl.value
     );
-    renderMovies(response.Search);
+    console.log(response);
+    renderMovies(response);
   }
 };
 
