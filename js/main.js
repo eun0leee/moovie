@@ -6,6 +6,8 @@ import {
   selectYearEl,
   moviesEl,
   makeOptionValue,
+  loadingEl,
+  beforeType,
 } from './store';
 import renderMovies from './render';
 
@@ -14,8 +16,12 @@ makeOptionValue();
 
 // 검색
 const handleSubmit = async (e) => {
-  moviesEl.innerHTML !== '' ? (moviesEl.innerHTML = '') : '';
   e.preventDefault();
+
+  beforeType.classList.add('hide');
+  loadingEl.classList.add('show');
+  moviesEl.innerHTML !== '' ? (moviesEl.innerHTML = '') : '';
+
   for (let i = 1; i <= selectCountEl.value; i++) {
     let page = i;
     const response = await getMovies(
@@ -23,11 +29,9 @@ const handleSubmit = async (e) => {
       page,
       selectYearEl.value
     );
-    console.log(response);
+    loadingEl.classList.remove('show');
     renderMovies(response);
   }
 };
 
 searchFormEl.addEventListener('submit', handleSubmit);
-
-// 로딩

@@ -5,6 +5,7 @@ export const selectYearEl = document.querySelector('.select-year');
 export const beforeType = document.querySelector('.beforeType');
 export const resultsEl = document.querySelector('.results');
 export const moviesEl = document.createElement('ul');
+export const loadingEl = document.querySelector('.coffee');
 
 // 개봉년도 옵션 생성
 export const makeOptionValue = () => {

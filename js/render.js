@@ -1,9 +1,8 @@
-import { moviesEl, beforeType, resultsEl } from './store';
+import { moviesEl, resultsEl } from './store';
 
 moviesEl.className = 'movies';
 
 export default function renderMovies(movies) {
-  beforeType.classList.add('hide');
   resultsEl.classList.add('afterType');
 
   if (movies.Response === 'True') {

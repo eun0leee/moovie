@@ -210,72 +210,84 @@ main {
     height: fit-content;
     overflow: unset;
   }
+}
 
-  .loading {
-    margin: 150px auto;
-    border: 8px solid #9f9e9e; /* Light grey */
-    border-top: 8px solid $main-color; /* Blue */
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: loading 2s linear infinite;
+/********************* LOADING *********************/
 
-    z-index: 9999;
+.coffee {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  justify-items: center;
+
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+  padding: 2px;
+  margin: 100px auto 0;
+
+  border-radius: 4px;
+  background: $main-color;
+  z-index: 9999;
+
+  &:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    left: 100%;
+
+    width: 20px;
+    height: 26px;
+    margin-top: -13px;
+    margin-left: -10px;
+
+    border: 4px solid $main-color;
+    border-radius: 4px;
   }
 
-  @keyframes loading {
-    0% {
-      transform: rotate(0deg);
+  & div {
+    height: 20px;
+    width: 8px;
+    background: $main-color;
+    opacity: 0.3;
+    -webkit-animation: coffee 2s infinite;
+    animation: coffee 2s infinite;
+
+    &:nth-child(1) {
+      -webkit-animation-delay: 0.4s;
+      animation-delay: 0.4s;
     }
-    100% {
-      transform: rotate(360deg);
+
+    &:nth-child(2) {
+      -webkit-animation-delay: 1s;
+      animation-delay: 1s;
+    }
+    &:nth-child(3) {
+      -webkit-animation-delay: 0.2s;
+      animation-delay: 0.2s;
     }
   }
+}
 
-  // .movies {
-  //   li {
-  //     transition: all 300ms ease-in-out;
-  //     background-color: #000;
+.show {
+  display: grid;
+}
 
-  //     .infoEl {
-  //       position: absolute;
-  //       bottom: 0;
-  //       left: 0;
-  //       right: 0;
-
-  //       padding: 10px 10px;
-  //       background-color: rgba(0, 0, 0, 0.7);
-
-  //       text-align: center;
-  //       font-weight: 700;
-  //       line-height: 1.2;
-  //       color: white;
-
-  //       h3 {
-  //         margin-bottom: 10px;
-  //       }
-  //     }
-  //   }
-  // }
-
-  // .actions {
-  //   display: flex;
-  //   justify-content: center;
-  //   padding-bottom: 50px;
-
-  //   .more-btn {
-  //     display: none;
-  //     width: 80px;
-  //     height: 50px;
-
-  //     padding: 0;
-  //     border-radius: 10px;
-  //     background-color: $main-color;
-
-  //     color: #fff;
-  //     font-size: 16px;
-
-  //     cursor: pointer;
-  //   }
-  // }
+@-webkit-keyframes coffee {
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+  }
+}
+@keyframes coffee {
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-200%);
+    transform: translateY(-200%);
+  }
 }
