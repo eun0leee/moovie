@@ -3,6 +3,7 @@ import { moviesEl, resultsEl } from './store';
 moviesEl.className = 'movies';
 
 export default function renderMovies(movies) {
+  resultsEl.innerHTML = '';
   resultsEl.classList.add('afterType');
 
   if (movies.Response === 'True') {
