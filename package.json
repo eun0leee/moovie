@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eun0leee/search-movie.git"
+    "url": "git+https://github.com/eun0leee/moovie.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/eun0leee/search-movie/issues"
+    "url": "https://github.com/eun0leee/moovie/issues"
   },
-  "homepage": "https://github.com/eun0leee/search-movie#readme",
+  "homepage": "https://github.com/eun0leee/moovie#readme",
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/plugin-transform-runtime": "^7.19.6",
@@ -33,5 +33,8 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "sass": "^1.59.3"
+  }
 }
