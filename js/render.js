@@ -11,13 +11,12 @@ export default function renderMovies(movies) {
       const movieLiEl = document.createElement('li');
       movieLiEl.className = 'movie';
       movieLiEl.innerHTML = `
-          <img src='${movie.Poster}' alt='${movie.Title}의 포스터'/>
-          <div class='info'>
-          <p>${movie.Title}</p>
-          <p>${movie.Year}</p>
-          </div>
-          `;
-
+      <img src='${movie.Poster}' alt='${movie.Title}의 포스터' onerror="this.onerror=null; this.src='/assets/no-image.jpg';"/>
+      <div class='info'>
+        <p>${movie.Title}</p>
+        <p>${movie.Year}</p>
+      </div>
+      `;
       moviesEl.append(movieLiEl);
       resultsEl.append(moviesEl);
     });
