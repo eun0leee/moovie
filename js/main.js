@@ -11,18 +11,19 @@ import {
 } from './store';
 import renderMovies from './render';
 
-let page;
-
 // 개봉년도 옵션 생성
 makeOptionValue();
 
 // api get 호출 및 렌더
+let page = 0;
+
 const getDataAndRender = async () => {
   const response = await getMovies(
     searchInputEl.value,
     page,
     selectYearEl.value
   );
+  console.log(response);
   loadingEl.classList.remove('show');
   renderMovies(response);
 };
@@ -51,4 +52,10 @@ const infinite = async () => {
   }
 };
 
-window.addEventListener('scroll', infinite);
+let timer = null;
+function debouncing() {
+  if (timer) clearTimeout(timer);
+  timer = setTimeout(infinite, 500);
+}
+
+document.addEventListener('scroll', debouncing);
