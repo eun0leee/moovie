@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
 
-/********************* Global ****************/
+/********************* GLOBAL ****************/
 button,
 input,
 textarea {
@@ -13,7 +13,7 @@ body {
   font-family: 'Roboto Mono', monospace;
 }
 
-.home {
+#root {
   width: 768px;
   margin: 40px auto;
 }
@@ -72,7 +72,7 @@ nav {
   }
 }
 
-/********************* MAIN *********************/
+/********************* SEARCH PAGE *********************/
 
 main {
   margin: 0 auto;
@@ -193,6 +193,7 @@ main {
 
       &:hover {
         scale: 1.05;
+        cursor: pointer;
 
         .info {
           display: block;
@@ -212,7 +213,7 @@ main {
   }
 }
 
-/********************* LOADING *********************/
+/* LOADING */
 
 .coffee {
   display: none;
@@ -291,3 +292,5 @@ main {
     transform: translateY(-200%);
   }
 }
+
+/********************* MOVIE PAGE *********************/
