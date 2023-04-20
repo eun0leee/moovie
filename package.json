@@ -1,40 +1,24 @@
 {
-  "name": "search-movie",
+  "name": "moovie",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "description": "- OMDb API를 활용한 영화 검색 사이트를 제작해보았습니다.",
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "autoprefixer": "^9.8.8",
+    "postcss": "^8.4.23",
+    "sass": "^1.62.0"
+  },
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/eun0leee/moovie.git"
+    "build": "parcel index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/eun0leee/moovie/issues"
-  },
-  "homepage": "https://github.com/eun0leee/moovie#readme",
-  "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/plugin-transform-runtime": "^7.19.6",
-    "@babel/preset-env": "^7.20.2",
-    "@parcel/transformer-sass": "^2.8.2",
-    "autoprefixer": "^9.8.8",
-    "parcel-plugin-static-files-copy": "^2.6.0",
-    "postcss": "^8.4.21"
-  },
-  "staticFiles": {
-    "staticPath": "static"
-  },
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ],
-  "dependencies": {
-    "sass": "^1.59.3"
-  }
+  ]
 }
