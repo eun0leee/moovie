@@ -1,11 +1,6 @@
 import page from './page.js';
 
 export default class extends page {
-  constructor() {
-    super();
-    this.setTitle('Search');
-  }
-
   async getHtml() {
     return `
     <form action="" method="post">
