@@ -1,6 +1,14 @@
-<main>
-  <!----------search bar---------->
-  <form action="" method="post">
+import page from './page.js';
+
+export default class extends page {
+  constructor() {
+    super();
+    this.setTitle('Search');
+  }
+
+  async getHtml() {
+    return `
+    <form action="" method="post">
     <input
       class="search-input"
       type="text"
@@ -36,4 +44,6 @@
       <div></div>
     </div>
   </div>
-</main>
+        `;
+  }
+}
