@@ -18,8 +18,6 @@ const router = async () => {
 
   let match = routerMatchs.find((routerMatch) => routerMatch.isMatch);
 
-  console.log(match);
-
   if (!match) {
     match = { route: routes[0], isMatch: true };
   }

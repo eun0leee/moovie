@@ -1,4 +1,5 @@
-import { moviesEl, resultsEl } from './store';
+const resultsEl = document.querySelector('.results');
+const moviesEl = document.createElement('ul');
 
 moviesEl.className = 'movies';
 
