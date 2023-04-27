@@ -1,8 +1,5 @@
-import page from './page.js';
-
-export default class extends page {
-  async getHtml() {
-    return `
+const renderSearch = () => {
+  const searchContent = `
     <form action="" method="post">
     <input
       class="search-input"
@@ -38,7 +35,9 @@ export default class extends page {
       <div></div>
       <div></div>
     </div>
-  </div>
-        `;
-  }
-}
+  </div>`;
+
+  document.querySelector('main').innerHTML = searchContent;
+};
+
+export default renderSearch;

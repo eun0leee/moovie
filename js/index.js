@@ -1,11 +1,11 @@
-import search from './js/search.js';
-import movie from './js/movie.js';
+import renderSearch from '/js/renderSearch';
+import renderDetail from '/js/renderDetail';
 
 const router = async () => {
   // 라우터 배열
   const routes = [
-    { path: '/', view: search },
-    { path: '/movie', view: movie },
+    { path: '/', view: renderSearch },
+    { path: '/detail', view: renderDetail },
   ];
 
   // 라우터 매치
@@ -18,13 +18,14 @@ const router = async () => {
 
   let match = routerMatchs.find((routerMatch) => routerMatch.isMatch);
 
+  console.log(match);
+
   if (!match) {
     match = { route: routes[0], isMatch: true };
   }
 
   // 매치된 내용 출력
-  const view = new match.route.view();
-  document.querySelector('#contents').innerHTML = await view.getHtml();
+  match.route.view();
 };
 
 const navigateTo = (url) => {
