@@ -1,11 +1,11 @@
-import renderSearch from '/js/renderSearch';
-import renderDetail from '/js/renderDetail';
+import Search from '/src/pages/Search/index';
+import Detail from '/src/pages/Detail/index';
 
 const router = async () => {
   // 라우터 배열
   const routes = [
-    { path: '/', view: renderSearch },
-    { path: '/detail', view: renderDetail },
+    { path: '/', view: Search },
+    { path: '/detail', view: Detail },
   ];
 
   // 라우터 매치
