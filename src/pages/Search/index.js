@@ -36,10 +36,15 @@ const renderSearch = () => {
 
     if (movies.Response === 'True') {
       movies.Search.map((movie) => {
+        console.log(movie.Poster === 'N/A');
         const movieLiEl = document.createElement('li');
         movieLiEl.className = 'movie';
         movieLiEl.innerHTML = `
-        <img src='${movie.Poster}' alt='${movie.Title}의 포스터' onerror="this.onerror=null; this.src='/assets/no-image.jpg';"/>
+        ${
+          movie.Poster === 'N/A'
+            ? `<div class="no-image"></div>`
+            : `<img class="search-poster" src="${movie.Poster}" alt="${movie.Title}의 포스터" />`
+        }
         <div class='info'>
           <p>${movie.Title}</p>
           <p>${movie.Year}</p>
@@ -102,7 +107,7 @@ const renderSearch = () => {
     timer = setTimeout(infinite, 500);
   }
 
-  searchInputEl.value && document.addEventListener('scroll', debouncing);
+  document.addEventListener('scroll', debouncing);
 };
 
 export default renderSearch;
