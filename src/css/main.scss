@@ -297,28 +297,32 @@ main {
 
 /********************* DETAIL PAGE *********************/
 
-.detailContent-top {
+.detailContent-container {
   display: flex;
   margin-bottom: 50px;
-  gap: 30px;
+  gap: 40px;
 
-  img {
-    width: 170px;
-    height: 250px;
+  .detailPoster {
+    width: 300px;
     border-radius: 5px;
   }
 
-  .detailContent-top-desc {
+  .detailContent-desc {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     gap: 20px;
 
+    h4 {
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
     .detailTitle {
       font-size: 48px;
       font-weight: 700;
     }
-    ul {
+    .detailInfo {
       display: flex;
       font-size: 15px;
       font-weight: 700;
@@ -336,30 +340,19 @@ main {
       text-overflow: ellipsis;
       color: $sub-color;
     }
-  }
-}
-
-.detailContent-bottom {
-  h4 {
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-
-  & > div {
-    margin-bottom: 50px;
-  }
-
-  .group-ratings {
-    ul {
-      display: flex;
-      gap: 20px;
-      li {
+    .group-ratings {
+      margin-top: 40px;
+      ul {
         display: flex;
-        align-items: center;
-        gap: 10px;
-        img {
-          width: 50px;
-          border-radius: 10px;
+        gap: 20px;
+        li {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          img {
+            width: 50px;
+            border-radius: 10px;
+          }
         }
       }
     }

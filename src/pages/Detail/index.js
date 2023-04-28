@@ -17,44 +17,42 @@ const renderDetail = async () => {
 
   // detail 마크업
   const detailContent = `
-      <div class="detailContent-top">
+      <div class="detailContent-container">
         <img class="detailPoster" src="${detailPoster}" alt="toy story poster"/>
-        <div class="detailContent-top-desc" >
+        <div class="detailContent-desc" >
           <h3 class="detailTitle">${detailTitle}</h3>
-          <ul>
+          <ul class="detailInfo">
             <li class="detailYear">${detailYear}</li>
             <li class="detailGenre">${detailGenre}</li>
             <li class="detailRuntime">${detailRuntime}</li>
           </ul>
           <p class="detailPlot">${detailPlot}</p>
-      </div>
-      </div>
-      <div class="detailContent-bottom">
-        <div class="group-ratings">
-          <h4>Ratings</h4>
-          <ul>
-            <li class="detailRatingsImdb">
-              <img src="https://images.squarespace-cdn.com/content/v1/57c984f1cd0f68cf4beeb2cf/1472911999963-KH5AM2AU675ZGJUJEGQV/imdb+logo.png" alt="imdb logo"/>
-              ${detailRatingsImdb}
-            </li>
-            <li class="detailRatingsRotten">
-              <img src="https://www.boxofficepro.com/wp-content/uploads/2019/08/Rotten.png" alt="Rotten Tomatoes logo"/>
-              ${detailRatingsRotten}
-            </li>
-            <li class="detailRatingsMetacritic">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Metacritic_logo_original.svg/1200px-Metacritic_logo_original.svg.png" alt="Metacritic logo"/>
-              ${detailRatingsMetacritic}
-            </li>
-          </ul>
+          <div class="group-ratings">
+            <h4>Ratings</h4>
+            <ul>
+              <li class="detailRatingsImdb">
+                <img src="https://images.squarespace-cdn.com/content/v1/57c984f1cd0f68cf4beeb2cf/1472911999963-KH5AM2AU675ZGJUJEGQV/imdb+logo.png" alt="imdb logo"/>
+                ${detailRatingsImdb}
+              </li>
+              <li class="detailRatingsRotten">
+                <img src="https://www.boxofficepro.com/wp-content/uploads/2019/08/Rotten.png" alt="Rotten Tomatoes logo"/>
+                ${detailRatingsRotten}
+              </li>
+              <li class="detailRatingsMetacritic">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Metacritic_logo_original.svg/1200px-Metacritic_logo_original.svg.png" alt="Metacritic logo"/>
+                ${detailRatingsMetacritic}
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4>Director</h4>
+            <p class="detailDirector">${detailDirector}</p>
+          </div>
+          <div>
+            <h4>Actors</h4>
+            <p class="detailActors">${detailActors}</p>
+          </div>
         </div>
-        <div>
-          <h4>Director</h4>
-          <p class="detailDirector">${detailDirector}</p>
-        </div>
-        <div>
-          <h4>Actors</h4>
-          <p class="detailActors">${detailActors}</p>
-        </div>       
       </div>
       
     `;
