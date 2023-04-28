@@ -18,7 +18,10 @@ const renderDetail = async () => {
   // detail 마크업
   const detailContent = `
       <div class="detailContent-container">
-        <img class="detailPoster" src="${detailPoster}" alt="toy story poster"/>
+        <img class="detailPoster" src=${detailPoster.replace(
+          'SX300',
+          'SX450'
+        )} alt="toy story poster"/>
         <div class="detailContent-desc" >
           <h3 class="detailTitle">${detailTitle}</h3>
           <ul class="detailInfo">
