@@ -102,7 +102,7 @@ const renderSearch = () => {
     timer = setTimeout(infinite, 500);
   }
 
-  document.addEventListener('scroll', debouncing);
+  searchInputEl.value && document.addEventListener('scroll', debouncing);
 };
 
 export default renderSearch;
