@@ -8,7 +8,7 @@ const renderDetail = async () => {
   const detailYear = response.Year;
   const detailGenre = response.Genre;
   const detailRuntime = response.Runtime;
-  const detailPlot = response.Plot;
+  const detailPlot = response.Plot.slice(0, 172) + '...';
   const detailDirector = response.Director;
   const detailActors = response.Actors;
   const detailRatingsImdb = response.Ratings[0].Value;
