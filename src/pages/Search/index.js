@@ -99,17 +99,20 @@ const renderSearch = () => {
 
   // 무한스크롤
   const infinite = async () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    if (
+      searchInputEl.value &&
+      window.innerHeight + window.scrollY >= document.body.offsetHeight
+    ) {
       page += 1;
       getDataAndRender();
     }
   };
 
   let timer = null;
-  function debouncing() {
+  const debouncing = () => {
     if (timer) clearTimeout(timer);
     timer = setTimeout(infinite, 500);
-  }
+  };
 
   document.addEventListener('scroll', debouncing);
 };
