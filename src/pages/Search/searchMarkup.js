@@ -1,4 +1,4 @@
-export const searchContent = `
+export const searchMarkup = `
     <form action="" method="post">
     <input
       class="search-input"

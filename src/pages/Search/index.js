@@ -1,98 +1,34 @@
-import { getMovies } from '/src/js/api';
-import { searchContent } from './SearchContent';
+import { searchMarkup } from './searchMarkup';
+import { searchYearOption } from './searchYearOption';
+import { searchData } from './searchData';
+import { loadingEl } from './searchInitStore';
 
 const renderSearch = () => {
   // main 영역 마크업
-  document.querySelector('main').innerHTML = searchContent;
+  document.querySelector('main').innerHTML = searchMarkup;
 
   // 요소 선택
   const searchFormEl = document.querySelector('form');
   const searchInputEl = document.querySelector('.search-input');
   const selectCountEl = document.querySelector('.select-count');
   const selectYearEl = document.querySelector('.select-year');
-  const beforeType = document.querySelector('.beforeType');
-  const moviesEl = document.createElement('ul');
-  const loadingEl = document.querySelector('.coffee');
+  const beforeTypeEl = document.querySelector('.beforeType');
+  let countPages = 0;
 
   // 개봉년도 옵션 설정
-  const makeOptionValue = () => {
-    let currentYear = new Date().getFullYear();
-    for (let i = currentYear; i >= 1980; i--) {
-      const optionYearEl = document.createElement('option');
-      optionYearEl.value = i;
-      optionYearEl.innerText = i;
-      selectYearEl.append(optionYearEl);
-    }
-  };
-
-  makeOptionValue();
-
-  // 렌더
-  const resultsEl = document.querySelector('.results');
-  moviesEl.className = 'movies';
-  function renderMovies(movies) {
-    resultsEl.innerHTML = '';
-    resultsEl.classList.add('afterType');
-
-    if (movies.Response === 'True') {
-      movies.Search.map((movie) => {
-        const movieLiEl = document.createElement('li');
-        const movieTitleEl =
-          movie.Title.length > 25
-            ? movie.Title.slice(0, 25) + '...'
-            : movie.Title;
-        const movieYearEl = movie.Year.slice(0, 4);
-        movieLiEl.className = 'movie';
-        movieLiEl.innerHTML = `
-        ${
-          movie.Poster === 'N/A'
-            ? `<div class="no-image"></div>`
-            : `<img class="search-poster" src="${movie.Poster}" alt="${movie.Title}의 포스터" />`
-        }
-        <a class='info' href="/detail/${movie.imdbID}">
-          <p>${movieTitleEl}</p>
-          <p>${movieYearEl}</p>
-        </a>
-        `;
-        moviesEl.append(movieLiEl);
-        resultsEl.append(moviesEl);
-      });
-    } else if (movies.Response === 'False') {
-      resultsEl.innerHTML = '';
-      const noResults = document.createElement('p');
-      noResults.className = 'noResults';
-      noResults.innerText =
-        'No search results found.TT \n Try searching with another keyword.';
-      resultsEl.append(noResults);
-    }
-  }
-
-  // api get 호출 및 렌더
-  let page = 0;
-
-  const getDataAndRender = async () => {
-    const response = await getMovies(
-      searchInputEl.value,
-      page,
-      selectYearEl.value
-    );
-    console.log(response);
-    loadingEl.classList.remove('show');
-    renderMovies(response);
-  };
+  searchYearOption(selectYearEl);
 
   // 검색
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    beforeType.classList.add('hide');
-    loadingEl.classList.add('show');
-    moviesEl.innerHTML !== '' ? (moviesEl.innerHTML = '') : '';
+    // 키보드 gif 숨기기, 로딩 스피너 보이기, 검색결과 새로 출력
+    beforeTypeEl.classList.add('hide');
+    loadingEl && loadingEl.classList.add('show');
 
-    for (let i = 1; i <= selectCountEl.value; i++) {
-      page = i;
-      getDataAndRender();
-    }
+    // 검색 api 호출 및 렌더
+    countPages = selectCountEl.value;
+    searchData(searchInputEl.value, selectYearEl.value, countPages);
   };
 
   searchFormEl.addEventListener('submit', handleSubmit);
@@ -103,11 +39,12 @@ const renderSearch = () => {
       searchInputEl.value &&
       window.innerHeight + window.scrollY >= document.body.offsetHeight
     ) {
-      page += 1;
-      getDataAndRender();
+      countPages++;
+      searchData(searchInputEl.value, selectYearEl.value, countPages);
     }
   };
 
+  // 디바운스(마지막 호출함수만 실행)
   let timer = null;
   const debouncing = () => {
     if (timer) clearTimeout(timer);

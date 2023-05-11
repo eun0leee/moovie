@@ -1,4 +1,4 @@
-export async function getMovies(title, page, year) {
+export async function getMovies(title, year, page) {
   try {
     const res = await fetch(
       `https://omdbapi.com/?apikey=7035c60c&s=${title}&page=${page}&y=${year}`
