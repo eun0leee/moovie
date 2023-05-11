@@ -38,6 +38,7 @@ const renderSearch = () => {
       movies.Search.map((movie) => {
         console.log(movie.Poster === 'N/A');
         const movieLiEl = document.createElement('li');
+        const movieYearEl = movie.Year.slice(0, 4);
         movieLiEl.className = 'movie';
         movieLiEl.innerHTML = `
         ${
@@ -47,7 +48,7 @@ const renderSearch = () => {
         }
         <div class='info'>
           <p>${movie.Title}</p>
-          <p>${movie.Year}</p>
+          <p>${movieYearEl}</p>
         </div>
         `;
         moviesEl.append(movieLiEl);
