@@ -35,7 +35,7 @@ export const searchResultsRender = (movies) => {
       movieLiEl.innerHTML = `
         ${
           movie.Poster === 'N/A'
-            ? `<div class="no-image"></div>`
+            ? `<div class="search-poster-none"></div>`
             : `<img class="search-poster" src="${movie.Poster}" alt="${movie.Title}의 포스터" />`
         }
         <a class='info' href="/detail/${movie.imdbID}">

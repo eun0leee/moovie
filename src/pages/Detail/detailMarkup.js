@@ -13,14 +13,16 @@ export const detailMarkup = ({
 }) => {
   return `
         <div class="detailContent-container">
+          <div class="detailPoster">
           ${
             detailPoster !== 'N/A'
-              ? `<img class="detailPoster" src=${detailPoster.replace(
+              ? `<img class="detailPoster-img" src=${detailPoster.replace(
                   'SX300',
                   'SX450'
                 )} alt="${detailTitle} poster"/>`
-              : ''
+              : `<div class="no-image"></div>`
           }
+          </div>
           <div class="detailContent-desc" >
             <h3 class="detailTitle">${detailTitle}</h3>
             <ul class="detailInfo">
