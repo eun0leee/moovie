@@ -36,8 +36,11 @@ const renderSearch = () => {
 
     if (movies.Response === 'True') {
       movies.Search.map((movie) => {
-        console.log(movie.Poster === 'N/A');
         const movieLiEl = document.createElement('li');
+        const movieTitleEl =
+          movie.Title.length > 25
+            ? movie.Title.slice(0, 25) + '...'
+            : movie.Title;
         const movieYearEl = movie.Year.slice(0, 4);
         movieLiEl.className = 'movie';
         movieLiEl.innerHTML = `
@@ -47,7 +50,7 @@ const renderSearch = () => {
             : `<img class="search-poster" src="${movie.Poster}" alt="${movie.Title}의 포스터" />`
         }
         <div class='info'>
-          <p>${movie.Title}</p>
+          <p>${movieTitleEl}</p>
           <p>${movieYearEl}</p>
         </div>
         `;
