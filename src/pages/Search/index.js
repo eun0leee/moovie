@@ -49,10 +49,10 @@ const renderSearch = () => {
             ? `<div class="no-image"></div>`
             : `<img class="search-poster" src="${movie.Poster}" alt="${movie.Title}의 포스터" />`
         }
-        <div class='info'>
+        <a class='info' href="/detail/${movie.imdbID}">
           <p>${movieTitleEl}</p>
           <p>${movieYearEl}</p>
-        </div>
+        </a>
         `;
         moviesEl.append(movieLiEl);
         resultsEl.append(moviesEl);

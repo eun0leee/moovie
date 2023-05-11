@@ -1,8 +1,8 @@
 import { getMovieDetails } from '/src/js/api';
 
-const renderDetail = async () => {
+const renderDetail = async (id = 'tt0114709') => {
   // api로 값 가져오기
-  const response = await getMovieDetails('tt0114709');
+  const response = await getMovieDetails(id);
   const detailPoster = response.Poster;
   const detailTitle = response.Title;
   const detailYear = response.Year;

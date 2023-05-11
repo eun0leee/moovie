@@ -1,18 +1,23 @@
-import Search from '/src/pages/Search/index';
-import Detail from '/src/pages/Detail/index';
+import search from '/src/pages/Search/index';
+import detail from '/src/pages/Detail/index';
 
 const router = async () => {
   // 라우터 배열
   const routes = [
-    { path: '/', view: Search },
-    { path: '/detail', view: Detail },
+    { path: '', view: search },
+    {
+      path: 'detail',
+      view: async () => {
+        await detail(location.pathname.split('/')[2]);
+      },
+    },
   ];
 
   // 라우터 매치
   const routerMatchs = routes.map((route) => {
     return {
       route,
-      isMatch: location.pathname === route.path,
+      isMatch: location.pathname.split('/')[1] === route.path,
     };
   });
 
@@ -32,3 +37,5 @@ const navigateTo = (url) => {
 };
 
 navigateTo(location.href);
+
+window.addEventListener('popstate', router);
