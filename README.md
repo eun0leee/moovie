@@ -5,7 +5,7 @@
 
 <img alt="Html" src ="https://img.shields.io/badge/HTML-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/> <img alt="CSS3" src ="https://img.shields.io/badge/CSS3-FF9933.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/> <img alt="JavaScript" src ="https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=white"/>  
 
-## 👉 기능
+## 👉 설명
 - jQuery, React, Vue 등 JS 라이브러리와 프레임워크를 사용하지 않고, Vanilla JavaScript 로 만들었습니다.
 - 스타일(CSS)은 SCSS 를 사용하였습니다.
 - 영화 제목으로 검색 가능하고 검색된 결과의 영화 목록을 볼 수 있습니다.
