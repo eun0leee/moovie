@@ -1,11 +1,11 @@
 import { searchMarkup } from './searchMarkup';
 import { searchYearOption } from './searchYearOption';
 import { searchData } from './searchData';
-import { loadingEl } from './searchInitStore';
 
 const renderSearch = () => {
   // main 영역 마크업
   document.querySelector('main').innerHTML = searchMarkup;
+  const loadingEl = document.querySelector('.coffee');
 
   // 요소 선택
   const searchFormEl = document.querySelector('form');

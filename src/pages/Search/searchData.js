@@ -1,8 +1,8 @@
 import { getMovies } from '/src/js/api';
 import { searchResultsRender } from './searchResultsRender';
-import { loadingEl } from './searchInitStore';
 
 export const searchData = async (keyword, year, countPages) => {
+  const loadingEl = document.querySelector('.coffee');
   const moviesData = [];
   for (let i = 1; i <= countPages; i++) {
     const response = await getMovies(keyword, year, i);
