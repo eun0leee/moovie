@@ -1,9 +1,6 @@
 # 🎞️영화 검색 사이트🎞️
 * OMDb API를 활용한 영화 검색 사이트를 제작해보았습니다.
 
-## 👉 Site
-* [배포 사이트](https://tourmaline-rabanadas-0bdb58.netlify.app)
-
 ## 👉 Stack
 
 <img alt="Html" src ="https://img.shields.io/badge/HTML-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/> <img alt="CSS3" src ="https://img.shields.io/badge/CSS3-FF9933.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/> <img alt="JavaScript" src ="https://img.shields.io/badge/JavaScript-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=white"/>  
