@@ -20,5 +20,8 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "parcel": "^2.8.3"
+  }
 }
