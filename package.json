@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel index.html"
+    "build": "parcel build index.html"
   },
   "keywords": [],
   "author": "",
