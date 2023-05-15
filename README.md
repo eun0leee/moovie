@@ -1,10 +1,10 @@
 # 🎥영화 검색 사이트
 
-- OMDb API를 활용한 영화 검색 사이트를 제작해보았습니다.
+- OMDb API를 활용한 영화 검색 사이트입니다.
 
 ## 👉 Site
 
-- [배포 사이트](https://tourmaline-rabanadas-0bdb58.netlify.app)
+- [배포 사이트](https://moovie-omdb.netlify.app/)
 
 ## 👉 Stack
 
