@@ -2,10 +2,9 @@
   "name": "moovie",
   "version": "1.0.0",
   "description": "OMDb API를 활용한 영화 검색 사이트",
-  "main": "index.js",
+  "main": "index.html",
   "devDependencies": {
     "@babel/core": "^7.21.8",
-    "@babel/preset-env": "^7.21.5",
     "autoprefixer": "^9.8.8",
     "postcss": "^8.4.23",
     "sass": "^1.62.1"
