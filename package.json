@@ -6,7 +6,6 @@
   "devDependencies": {
     "@babel/core": "^7.21.8",
     "@babel/preset-env": "^7.21.5",
-    "@types/autoprefixer": "^10.2.0",
     "autoprefixer": "^9.8.8",
     "postcss": "^8.4.23",
     "sass": "^1.62.1"
