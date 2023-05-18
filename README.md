@@ -38,6 +38,15 @@
 - js 모듈화를 통해 가독성과 유지보수에 용이하도록 했습니다.
 - API 비동기 처리는 async, await을 사용했습니다.
 
+## 🔎 구현내용 상세, 해결한 것, 회고
+- 자세한 내용은 블로그 포스팅에서 보실 수 있습니다.
+  - [Vaniila JS로 영화검색 사이트 만들기(OMDB API를 활용한 SPA 웹사이트)](https://velog.io/@eun0leee/영화검색-사이트OMDB-API-를-활용한)
+- 주요 구현 내용 포스팅
+  - [[HTML] 대체 이미지](https://velog.io/@eun0leee/HTML-%EB%8C%80%EC%B2%B4-%EC%9D%B4%EB%AF%B8%EC%A7%80)
+  - [[JS] type=module 과 defer](https://velog.io/@eun0leee/JS-typemodule-%EA%B3%BC-defer)
+  - [[JS] Vanilla JS로 라이브러리없이 무한스크롤 구현하기](https://velog.io/@eun0leee/JS-Vanilla-JavaScript%EB%A1%9C-%EB%AC%B4%ED%95%9C%EC%8A%A4%ED%81%AC%EB%A1%A4-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0)
+  - [[JS] Vanilla JS로 SPA 라우터 구현](https://velog.io/@eun0leee/JS-Vanilla-Javascript%EB%A1%9C-SPA-%EB%A7%8C%EB%93%A4%EA%B8%B0)
+
 ## 🔎 디렉토리 구조
 ```
 ┣ 📦src
@@ -67,12 +76,3 @@
 ┣ 📜package.json
 ┗ 📜README.md
 ```
-
-# 🔎 구현내용 상세, 해결한 것, 회고
-- 자세한 내용은 블로그 포스팅에서 보실 수 있습니다.
-  - [Vaniila JS로 영화검색 사이트 만들기(OMDB API를 활용한 SPA 웹사이트)](https://velog.io/@eun0leee/영화검색-사이트OMDB-API-를-활용한)
-- 주요 구현 내용 포스팅
-  - [[HTML] 대체 이미지](https://velog.io/@eun0leee/HTML-%EB%8C%80%EC%B2%B4-%EC%9D%B4%EB%AF%B8%EC%A7%80)
-  - [[JS] type=module 과 defer](https://velog.io/@eun0leee/JS-typemodule-%EA%B3%BC-defer)
-  - [[JS] Vanilla JS로 라이브러리없이 무한스크롤 구현하기](https://velog.io/@eun0leee/JS-Vanilla-JavaScript%EB%A1%9C-%EB%AC%B4%ED%95%9C%EC%8A%A4%ED%81%AC%EB%A1%A4-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0)
-  - [[JS] Vanilla JS로 SPA 라우터 구현](https://velog.io/@eun0leee/JS-Vanilla-Javascript%EB%A1%9C-SPA-%EB%A7%8C%EB%93%A4%EA%B8%B0)
