@@ -15,8 +15,8 @@ JavaScript의 비동기와 SPA에 대해 공부하고자, OMDB API 라는 Open A
 | 메인 검색 페이지(검색전)  |  메인 검색 페이지(검색후)   |
 | :-------------------------------------------: | :------------: |
 |  <img width="329" src="https://github.com/eun0leee/mjff-clone/assets/90189513/cb43a959-1ee4-4cc0-931b-f45ec7269e12"/> |  <img width="329" src="https://github.com/eun0leee/mjff-clone/assets/90189513/5a766bad-bdff-4ece-afc2-07f24456eed9"/>|  
-| 상세페이지   |  ㅇㅇ   |  
-| <img width="329" src="https://github.com/eun0leee/mjff-clone/assets/90189513/5f7b778e-d337-415f-98da-620faf266729"/>   |  <img width="329" src="https://user-images.githubusercontent.com/50205887/208038965-43a6318a-7b05-44bb-97c8-b08b0495fba7.png"/>     |
+| 상세페이지   |     |  
+| <img width="329" src="https://github.com/eun0leee/mjff-clone/assets/90189513/5f7b778e-d337-415f-98da-620faf266729"/>   |   |
 
 
 ## 🔎 구현내용
