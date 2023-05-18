@@ -4,8 +4,8 @@
   "description": "OMDb API를 활용한 영화 검색 사이트",
   "devDependencies": {
     "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
     "@parcel/transformer-sass": "^2.8.3",
-    "autoprefixer": "^9.8.8",
     "parcel": "^2.8.3",
     "postcss": "^8.4.23",
     "sass": "^1.62.1"
@@ -20,8 +20,5 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ],
-  "dependencies": {
-    "@swc/helpers": "^0.4.12"
-  }
+  ]
 }
