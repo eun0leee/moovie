@@ -149,10 +149,12 @@ form {
   .beforeType {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 
     width: fit-content;
-    margin: 130px auto;
+    height: 250px;
+    margin: 20px auto;
     color: $sub-light-color;
 
     img {
