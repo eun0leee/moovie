@@ -1,6 +1,7 @@
 import { searchMarkup } from './searchMarkup';
 import { searchYearOption } from './searchYearOption';
 import { searchData } from './searchData';
+import { handlePushstate } from '/src/js/handlePushstate';
 
 const renderSearch = () => {
   // main 영역 마크업
@@ -55,14 +56,7 @@ const renderSearch = () => {
   document.addEventListener('scroll', debouncing);
 
   //pjax SPA 라우팅
-  logoEl.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.history.pushState('', '', `/`);
-    const urlChange = new CustomEvent('urlchange', {
-      detail: { href: `/` },
-    });
-    document.dispatchEvent(urlChange);
-  });
+  handlePushstate(logoEl, '/');
 };
 
 export default renderSearch;

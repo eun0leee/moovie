@@ -1,3 +1,5 @@
+import { handlePushstate } from '/src/js/handlePushstate';
+
 export const searchResultsRender = (movies) => {
   const resultsEl = document.querySelector('.results');
   const moviesEl = document.createElement('ul');
@@ -48,15 +50,8 @@ export const searchResultsRender = (movies) => {
       resultsEl.append(moviesEl);
 
       //pjax SPA 라우팅
-      movieLiEl.addEventListener('click', (e) => {
-        e.preventDefault();
-        const movieIdEl = e.target.closest('a').getAttribute('movieId');
-        window.history.pushState('', '', `/detail/?id=${movieIdEl}`);
-        const urlChange = new CustomEvent('urlchange', {
-          detail: { href: `/detail/?id=${movieIdEl}` },
-        });
-        document.dispatchEvent(urlChange);
-      });
+      const movieIdEl = document.querySelector('.info').getAttribute('movieId');
+      handlePushstate(movieLiEl, `/detail/?id=${movieIdEl}`);
     });
   } else {
     resultsEl.innerHTML = '';
