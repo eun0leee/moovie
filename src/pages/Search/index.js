@@ -13,6 +13,7 @@ const renderSearch = () => {
   const selectCountEl = document.querySelector('.select-count');
   const selectYearEl = document.querySelector('.select-year');
   const beforeTypeEl = document.querySelector('.beforeType');
+  const logoEl = document.querySelector('.logo');
   let countPages = 0;
 
   // 개봉년도 옵션 설정
@@ -52,6 +53,16 @@ const renderSearch = () => {
   };
 
   document.addEventListener('scroll', debouncing);
+
+  //pjax SPA 라우팅
+  logoEl.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.history.pushState('', '', `/`);
+    const urlChange = new CustomEvent('urlchange', {
+      detail: { href: `/` },
+    });
+    document.dispatchEvent(urlChange);
+  });
 };
 
 export default renderSearch;
