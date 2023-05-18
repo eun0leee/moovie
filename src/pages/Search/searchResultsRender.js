@@ -38,15 +38,25 @@ export const searchResultsRender = (movies) => {
             ? `<div class="search-poster-none"></div>`
             : `<img class="search-poster" src="${movie.Poster}" alt="${movie.Title}의 포스터" />`
         }
-        <a class='info' href="/detail/${movie.imdbID}">
+        <a class='info' href="/detail/${movie.imdbID}" movieId=${movie.imdbID}>
           <p>${movieTitleEl}</p>
           <p>${movieYearEl}</p>
         </a>
         `;
-
       //movie li 부모 요소 내용
       moviesEl.append(movieLiEl);
       resultsEl.append(moviesEl);
+
+      //pjax SPA 라우팅
+      movieLiEl.addEventListener('click', (e) => {
+        e.preventDefault();
+        const movieIdEl = e.target.closest('a').getAttribute('movieId');
+        window.history.pushState('', '', `/detail/?id=${movieIdEl}`);
+        const urlChange = new CustomEvent('urlchange', {
+          detail: { href: `/detail/?id=${movieIdEl}` },
+        });
+        document.dispatchEvent(urlChange);
+      });
     });
   } else {
     resultsEl.innerHTML = '';
