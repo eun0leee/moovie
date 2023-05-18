@@ -40,23 +40,32 @@
 
 ## 🔎 디렉토리 구조
 ```
-📦src
- ┣ 📂css
- ┃ ┃ ┣ 📜main.scss
- ┃ ┃ ┗ 📜reset-css.css
- ┣ 📂js
- ┃ ┃ ┣ 📜api.js
- ┃ ┃ ┗ 📜handlePushstate.js
- ┣ 📂pages
- ┃ ┣ 📂Detail
- ┃ ┃ ┣ 📜detailMarkup.js
- ┃ ┃ ┗ 📜index.js
- ┃ ┗ 📂Search
- ┃ ┃ ┗ 📜index.js
- ┃ ┃ ┣ 📜searchData.js
- ┃ ┃ ┣ 📜searchMarkup.js
- ┃ ┃ ┣ 📜searchResultsRender.js
- ┗ ┗ ┗ 📜searchYearOption.js
+┣ 📦src
+┃ ┣ 📂css
+┃ ┃ ┃ ┣ 📜main.scss
+┃ ┃ ┃ ┗ #️⃣reset-css.css
+┃ ┣ 📂js
+┃ ┃ ┃ ┣ 📜api.js
+┃ ┃ ┃ ┗ 📜handlePushstate.js
+┃ ┣ 📂pages
+┃ ┃ ┣ 📂Detail
+┃ ┃ ┃ ┣ 📜detailMarkup.js
+┃ ┃ ┃ ┗ 📜index.js
+┃ ┃ ┗ 📂Search
+┃ ┃ ┃ ┗ 📜index.js
+┃ ┃ ┃ ┣ 📜searchData.js
+┃ ┃ ┃ ┣ 📜searchMarkup.js
+┃ ┃ ┃ ┣ 📜searchResultsRender.js
+┗ ┗ ┗ ┗ 📜searchYearOption.js
+┣ 📦static
+┃ ┣ 📂assets
+┗ ┗ ⭐️favicon.ico
+┣ 📜.postcssrc.js
+┣ 📜index.html
+┣ 📜index.js
+┣ 📜package-lock.json
+┣ 📜package.json
+┗ 📜README.md
 ```
 
 # 🔎 구현내용 상세, 해결한 것, 회고
