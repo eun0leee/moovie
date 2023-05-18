@@ -1,6 +1,6 @@
 # 🔎 Vaniila JS로 영화검색 사이트 만들기 🔎
 
-JavaScript의 비동기와 SPA에 대해 공부하고자, OMDB API 라는 Open API를 활용하여 async/await으로 비동기처리하는 SPA 웹 영화검색사이트를 만들었습니다.
+비동기와 SPA를 중점적으로하여 JavaScript를 공부하고자 프로젝트를 시작했습니다. OMDB API 라는 Open API를 활용하여 async/await으로 비동기처리하는 SPA 웹 영화검색사이트를 만들었습니다.
 
 ## 🔎 사이트
 
