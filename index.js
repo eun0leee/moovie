@@ -3,8 +3,8 @@ import detail from '/src/pages/Detail/index';
 
 search();
 
-document.addEventListener('urlchange', async (e) => {
-  let url = e.target.baseURI;
+const render = async () => {
+  let url = window.location.href;
   let path = new URL(url).pathname;
   const searchParams = new URL(url).searchParams;
   const queryString = searchParams.get('id');
@@ -18,4 +18,12 @@ document.addEventListener('urlchange', async (e) => {
       break;
     default:
   }
+};
+
+document.addEventListener('urlchange', () => {
+  render();
+});
+
+window.addEventListener('popstate', () => {
+  render();
 });
