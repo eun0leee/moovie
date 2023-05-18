@@ -23,7 +23,7 @@ const renderDetail = async (id = 'tt0114709') => {
     : null;
 
   // detail 마크업
-  document.querySelector('main').innerHTML = detailMarkup({
+  document.getElementById('contents').innerHTML = detailMarkup({
     detailPoster,
     detailTitle,
     detailYear,

@@ -4,7 +4,7 @@ import { searchData } from './searchData';
 
 const renderSearch = () => {
   // main 영역 마크업
-  document.querySelector('main').innerHTML = searchMarkup;
+  document.getElementById('contents').innerHTML = searchMarkup;
   const loadingEl = document.querySelector('.coffee');
 
   // 요소 선택
